@@ -5,7 +5,8 @@ Created on Fri Apr 19 12:15:40 2024
 @author: mahesh.joshi
 """
 
-
+from dotenv import load_dotenv
+load_dotenv()
 import streamlit as st
 import openai
 from llama_index.llms.openai import OpenAI
@@ -21,7 +22,8 @@ if not os.path.exists("data"):
     os.makedirs("data")
 
 st.set_page_config(page_title="Chat with the bot", page_icon="💁", layout="centered", initial_sidebar_state="auto", menu_items=None)
-openai.api_key = "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"
+openai_api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = openai_api_key
 
 def reset_data_folder(user_id):
     user_data_path = os.path.join("data", user_id)
