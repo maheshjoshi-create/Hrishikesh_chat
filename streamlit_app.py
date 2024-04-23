@@ -22,7 +22,8 @@ if not os.path.exists("data"):
     os.makedirs("data")
 
 st.set_page_config(page_title="Chat with the bot", page_icon="💁", layout="centered", initial_sidebar_state="auto", menu_items=None)
-openai_api_key = os.getenv("OPENAI_API_KEY")
+#openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 openai.api_key = openai_api_key
 
 def reset_data_folder(user_id):
