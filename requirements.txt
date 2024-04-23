@@ -96,3 +96,4 @@ watchdog==4.0.0
 wrapt==1.16.0
 yarl==1.9.4
 python-dotenv
+llama-index-llms-groq
